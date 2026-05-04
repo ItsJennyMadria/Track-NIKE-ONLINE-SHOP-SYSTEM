@@ -62,3 +62,23 @@ input[type="submit"]:hover {
   color: green;
   font-weight: bold;
 }
+
+.login-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-link span {
+  margin-right: 8px;
+  color: #333;
+}
+
+.login-link a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

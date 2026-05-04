@@ -35,6 +35,12 @@ if (isset($_POST['create'])) {
             <input type="password" name="password" required>
 
             <input type="submit" name="create" value="Sign Up">
+
+            <div class="login-link">
+                <span>Already have an account?</span>
+                <a href="login.php">Log In</a>
+            </div>
+
         </div>
     </form>
 
