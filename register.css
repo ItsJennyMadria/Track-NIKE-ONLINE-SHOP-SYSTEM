@@ -84,6 +84,7 @@ input[type="submit"]:hover {
 }
 
 .shop-title {
+  width: 100%;
   text-align: center;
   color: black;
   font-size: 28px;
