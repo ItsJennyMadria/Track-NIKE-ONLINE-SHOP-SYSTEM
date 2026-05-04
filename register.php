@@ -34,6 +34,7 @@
             <label for="password"><b>Password</b></label>
             <input type="password" name="password" required>
         </form>
+
     </div>
 
 </body>
