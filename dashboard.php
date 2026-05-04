@@ -44,5 +44,24 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
             <p>₱5,495</p>
             <button class="buy-btn">Add to Bag</button>
         </div>
+        <div class="product-card">
+            <img src="assets/images/NikeAir Force 1 '07.jpg" alt="Air Force 1">
+            <h3>Air Force 1 '07</h3>
+            <p>₱5,495</p>
+            <button class="buy-btn">Add to Bag</button>
+        </div>
+        <div class="product-card">
+            <img src="assets/images/NikeAir Force 1 '07.jpg" alt="Air Force 1">
+            <h3>Air Force 1 '07</h3>
+            <p>₱5,495</p>
+            <button class="buy-btn">Add to Bag</button>
+        </div>
+        <div class="product-card">
+            <img src="assets/images/NikeAir Force 1 '07.jpg" alt="Air Force 1">
+            <h3>Air Force 1 '07</h3>
+            <p>₱5,495</p>
+            <button class="buy-btn">Add to Bag</button>
+        </div>x bn,
     </div>
 </main>
+

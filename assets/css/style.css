@@ -95,3 +95,9 @@ body {
     text-align: center;   /* Centers the "Air Force 1" text and button */
     border: 1px solid #f5f5f5; /* Adds a subtle Nike-style border */
 }
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
