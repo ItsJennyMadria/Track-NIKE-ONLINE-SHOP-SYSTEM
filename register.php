@@ -1,45 +1,42 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>REGISTRATION</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
 
-    <div>
-        <?php
-        if(isset($_POST['create'])){
-          echo 'User submitted.';  
-        }
-    ?>
-    </div>
+    <?php
+if (isset($_POST['create'])) {
+    echo "<p class='success'>User submitted.</p>";
+}
+?>
 
-    <div>
-        <form action="register.php" method="POST">
-            <div class="container"></div>
+    <form action="register.php" method="POST">
+        <div class="container">
             <h1>REGISTRATION</h1>
             <p>Fill up the form with correct values.</p>
-            <label for="firstname"><b>First Name</b></label>
+
+            <label>First Name</label>
             <input type="text" name="firstname" required>
 
-            <label for="lastname"><b>Last Name</b></label>
+            <label>Last Name</label>
             <input type="text" name="lastname" required>
 
-            <label for="email"><b>Email Address</b></label>
+            <label>Email Address</label>
             <input type="email" name="email" required>
 
-            <label for="phonenumber"><b>Phone Number</b></label>
+            <label>Phone Number</label>
             <input type="text" name="phonenumber" required>
 
-            <label for="password"><b>Password</b></label>
+            <label>Password</label>
             <input type="password" name="password" required>
 
             <input type="submit" name="create" value="Sign Up">
-
-        </form>
-
-    </div>
+        </div>
+    </form>
 
 </body>
 
