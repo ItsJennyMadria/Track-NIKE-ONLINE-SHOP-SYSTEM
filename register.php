@@ -2,47 +2,39 @@
 <html>
 
 <head>
-    <title>REGISTRATION</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
 
-    <div>
-        <?php
-        if (isset($_POST['create'])) {
-            echo 'User submitted.';
-        }
-        ?>
-    </div>
+    <?php
+if (isset($_POST['create'])) {
+    echo "<p class='success'>User submitted.</p>";
+}
+?>
 
     <form action="register.php" method="POST">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
+            <h1>REGISTRATION</h1>
+            <p>Fill up the form with correct values.</p>
 
-                    <h1>REGISTRATION</h1>
-                    <p>Fill up the form with correct values.</p>
+            <label>First Name</label>
+            <input type="text" name="firstname" required>
 
-                    <label for="firstname"><b>First Name</b></label>
-                    <input class="form-control" type="text" name="firstname" required>
+            <label>Last Name</label>
+            <input type="text" name="lastname" required>
 
-                    <label for="lastname"><b>Last Name</b></label>
-                    <input class="form-control" type="text" name="lastname" required>
+            <label>Email Address</label>
+            <input type="email" name="email" required>
 
-                    <label for="email"><b>Email Address</b></label>
-                    <input class="form-control" type="email" name="email" required>
+            <label>Phone Number</label>
+            <input type="text" name="phonenumber" required>
 
-                    <label for="phonenumber"><b>Phone Number</b></label>
-                    <input class="form-control" type="text" name="phonenumber" required>
+            <label>Password</label>
+            <input type="password" name="password" required>
 
-                    <label for="password"><b>Password</b></label>
-                    <input class="form-control" type="password" name="password" required>
-
-                    <input type="submit" name="create" value="Sign Up">
-
-                </div>
-            </div>
+            <input type="submit" name="create" value="Sign Up">
         </div>
     </form>
 
