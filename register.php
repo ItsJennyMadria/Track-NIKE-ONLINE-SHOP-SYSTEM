@@ -2,6 +2,7 @@
 
 <head>
     <title>REGISTRATION</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 
 <body>
@@ -36,8 +37,8 @@
 
             <input type="submit" name="create" value="Sign Up">
 
-
         </form>
+
     </div>
 
 </body>
