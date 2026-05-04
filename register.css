@@ -82,3 +82,11 @@ input[type="submit"]:hover {
 .login-link a:hover {
   text-decoration: underline;
 }
+
+.shop-title {
+  text-align: center;
+  color: black;
+  font-size: 28px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

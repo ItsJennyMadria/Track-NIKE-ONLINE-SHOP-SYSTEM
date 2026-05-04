@@ -16,6 +16,8 @@ if (isset($_POST['create'])) {
 
     <form action="register.php" method="POST">
         <div class="container">
+
+            <h2 class="shop-title">NIKE ONLINE SHOP</h2>
             <h1>REGISTRATION</h1>
             <p>Fill up the form with correct values.</p>
 
