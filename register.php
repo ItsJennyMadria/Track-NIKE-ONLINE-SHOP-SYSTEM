@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,20 +10,20 @@
 
     <div>
         <?php
-        if(isset($_POST['create'])){
-          echo 'User submitted.';  
+        if (isset($_POST['create'])) {
+            echo 'User submitted.';
         }
-    ?>
+        ?>
     </div>
 
-    <div>
-        <form action="register.php" method="POST">
-            <div class="container"></div>
-
+    <form action="register.php" method="POST">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-3">
+
                     <h1>REGISTRATION</h1>
                     <p>Fill up the form with correct values.</p>
+
                     <label for="firstname"><b>First Name</b></label>
                     <input class="form-control" type="text" name="firstname" required>
 
@@ -39,11 +40,11 @@
                     <input class="form-control" type="password" name="password" required>
 
                     <input type="submit" name="create" value="Sign Up">
+
                 </div>
             </div>
-        </form>
-
-    </div>
+        </div>
+    </form>
 
 </body>
 
