@@ -40,7 +40,7 @@ if (isset($_POST['create'])) {
 
             <div class="login-link">
                 <span>Already have an account?</span>
-                <a href="login.php">Log In</a>
+                <a href="index.php">Log In</a>
             </div>
 
         </div>
