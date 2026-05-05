@@ -101,3 +101,21 @@ body {
     gap: 20px;
     justify-content: flex-start;
 }
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.add-to-cart-btn {
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #444; /* Smooth transition to grey */
+    cursor: pointer;
+}
