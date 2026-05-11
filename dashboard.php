@@ -21,6 +21,7 @@ $log_result = mysqli_query($conn, $log_query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,7 @@ $log_result = mysqli_query($conn, $log_query);
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <nav class="nike-navbar">
         <div class="logo"><img src="assets/images/Nike black logo.jfif" alt="Logo" width="60"></div>
@@ -40,23 +42,23 @@ $log_result = mysqli_query($conn, $log_query);
             <span>Hello, <?php echo $username; ?></span>
             <a href="#" onclick="confirmLogout()">Logout</a>
 
-<script>
-function confirmLogout() {
-    Swal.fire({
-        title: 'Ready to leave?',
-        text: "You will need to login again to access your bag.",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#000',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, logout!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = 'actions/logout.php';
-        }
-    })
-}
-</script>
+            <script>
+            function confirmLogout() {
+                Swal.fire({
+                    title: 'Ready to leave?',
+                    text: "You will need to login again to access your bag.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#000',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, logout!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'actions/logout.php';
+                    }
+                })
+            }
+            </script>
         </div>
     </nav>
 
@@ -85,6 +87,24 @@ function confirmLogout() {
                     <button type="submit" name="add_to_bag" class="buy-btn">Add to Bag</button>
                 </form>
             </div>
+            <div class="product-card">
+                <img src="assets/images/techno sneakers.jpg" alt="Shoe">
+                <h3>Techno Sneakers</h3>
+                <p>₱6,195</p>
+                <form class="ajax-cart-form">
+                    <input type="hidden" name="product_id" value="3"> <button type="submit" name="add_to_bag"
+                        class="buy-btn">Add to Bag</button>
+                </form>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/Retro.jpg" alt="Shoe">
+                <h3>Retro</h3>
+                <p>₱6,195</p>
+                <form class="ajax-cart-form">
+                    <input type="hidden" name="product_id" value="3"> <button type="submit" name="add_to_bag"
+                        class="buy-btn">Add to Bag</button>
+                </form>
+            </div>
         </div>
     </main>
 
@@ -92,7 +112,9 @@ function confirmLogout() {
         <h3>System Activity Log (LEFT JOIN)</h3>
         <table border="1" width="100%" style="border-collapse: collapse; text-align: left;">
             <tr style="background: #000; color: #fff;">
-                <th>User</th><th>Action Made</th><th>Timestamp</th>
+                <th>User</th>
+                <th>Action Made</th>
+                <th>Timestamp</th>
             </tr>
             <?php while($row = mysqli_fetch_assoc($log_result)) { ?>
             <tr>
@@ -105,28 +127,35 @@ function confirmLogout() {
     </section>
 
     <script>
-        // 1. Chart.js Initialization
-        const ctx = document.getElementById('orderChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Pending', 'Completed'],
-                datasets: [{
-                    data: [5, 2], 
-                    backgroundColor: ['#000', '#777']
-                }]
-            },
-            options: { plugins: { title: { display: true, text: 'Order Stats' } } }
-        });
+    // 1. Chart.js Initialization
+    const ctx = document.getElementById('orderChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Pending', 'Completed'],
+            datasets: [{
+                data: [5, 2],
+                backgroundColor: ['#000', '#777']
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Order Stats'
+                }
+            }
+        }
+    });
 
-        // 2. AJAX Fetch Logic (Prevents the white "success" page)
-        document.querySelectorAll('.ajax-cart-form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); 
-                const formData = new FormData(this);
-                formData.append('add_to_bag', '1');
+    // 2. AJAX Fetch Logic (Prevents the white "success" page)
+    document.querySelectorAll('.ajax-cart-form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            formData.append('add_to_bag', '1');
 
-                fetch('actions/add_to_cart.php', {
+            fetch('actions/add_to_cart.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -137,11 +166,14 @@ function confirmLogout() {
                             title: 'Added to Bag!',
                             icon: 'success',
                             confirmButtonColor: '#000'
-                        }).then(() => { location.reload(); }); // Reload to update Activity Log
+                        }).then(() => {
+                            location.reload();
+                        }); // Reload to update Activity Log
                     }
                 });
-            });
         });
+    });
     </script>
 </body>
-</html> 
+
+</html>
