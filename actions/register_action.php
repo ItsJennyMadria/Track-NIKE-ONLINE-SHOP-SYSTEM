@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $role = 'customer'; // Default role for new signups
 
-    // Check if username already exists
+    
     $check_user = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($conn, $check_user);
 

@@ -8,13 +8,14 @@ if (!isset($_SESSION['user_id'])) {
     exit(); 
 }
 
-// 2. INNER JOIN: Fetch orders linked to the current user's ID
+
 $current_user_id = $_SESSION['user_id']; // Get the ID of the person logged in
 $query = "SELECT orders.order_id, users.username, orders.item_name, orders.price, orders.status 
           FROM orders 
           INNER JOIN users ON orders.user_id = users.user_id
-          WHERE orders.user_id = '$current_user_id'"; // Filter for only their items
-$result = mysqli_query($conn, $query);
+          WHERE orders.user_id = '$current_user_id'"; 
+          $result = mysqli_query($conn, $query); 
+?>
 ?>
 
 <!DOCTYPE html>
