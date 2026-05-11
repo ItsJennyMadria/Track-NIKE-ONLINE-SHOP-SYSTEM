@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS nike_shop_db;
 USE nike_shop_db;
-
+DROP TABLE IF EXISTS logs, orders, users;
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -26,3 +26,8 @@ CREATE TABLE logs (
     log_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
+INSERT INTO users (username, password, full_name, role) 
+VALUES ('admin', '1234', 'Test Admin', 'admin');
+
+-- Verification
+SELECT * FROM users;
